@@ -65,19 +65,11 @@ export const googleLogin = async (req, res) => {
   }
 }
 
-/**
- * POST /api/auth/logout
- * Clears the JWT cookie.
- */
 export const logout = (_req, res) => {
   res.clearCookie('token', { path: '/' })
   res.json({ ok: true })
 }
 
-/**
- * GET /api/me
- * Returns the currently logged-in user (used by frontend on app load).
- */
 export const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user.id)
