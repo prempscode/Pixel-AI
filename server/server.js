@@ -34,7 +34,7 @@ app.use((_req, res) => res.status(404).json({ error: 'Route not found' }))
 const start = async () => {
   await connectDB()
   app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`)
+    console.log(`Server running on http://localhost:${PORT}`)
   })
 }
 
